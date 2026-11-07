@@ -1,0 +1,60 @@
+{
+  "name": "codex-computer-use-mcp-win",
+  "version": "0.1.0",
+  "description": "Unofficial Windows port of codex-computer-use-mcp: drive native Windows apps through OpenAI's signed Computer Use helper, with no nested model.",
+  "license": "MIT",
+  "type": "module",
+  "os": [
+    "win32"
+  ],
+  "keywords": [
+    "computer-use",
+    "windows",
+    "automation",
+    "mcp",
+    "codex",
+    "chatgpt"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "codex-computer-use-mcp-win": "dist/mcp-server.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "SECURITY.md",
+    "LICENSE",
+    "NOTICE.md"
+  ],
+  "scripts": {
+    "build": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\" && tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "pretest": "npm run build",
+    "test": "node --test \"test/*.test.mjs\"",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "acorn": "8.19.0",
+    "smol-toml": "1.9.1",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.3",
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmustier/codex-computer-use-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tmustier/codex-computer-use-mcp/issues"
+  },
+  "homepage": "https://github.com/tmustier/codex-computer-use-mcp#readme"
+}
